@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"; // ⬅️ ajoute ça
+
 export default function CarCard({ car }) {
   const raw = car?.image_url || car?.image || "";
   const imageSrc = raw ? (raw.startsWith("http") ? raw : `http://127.0.0.1:8000${raw}`) : null;
@@ -52,12 +54,13 @@ export default function CarCard({ car }) {
           <span>{car.transmission}</span>
         </div>
 
-        <a
-          href="#"
+        {/* ⬇️ remplace <a href="#">…</a> par Link */}
+        <Link
+          to={`/vehicules/${car.id}`}
           className="mt-4 inline-flex items-center justify-center rounded-lg border px-4 h-10 text-sm font-medium hover:bg-gray-50 transition"
         >
           Détails
-        </a>
+        </Link>
       </div>
     </div>
   );

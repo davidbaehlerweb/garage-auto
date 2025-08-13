@@ -9,6 +9,7 @@ import EditVehicule from "./pages/EditVehicule";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import AdminContacts from "./components/admin/AdminContacts";
+import VehicleDetail from "./pages/VehicleDetail";
 
 export default function App() {
   return (
@@ -46,7 +47,7 @@ export default function App() {
  <Route path="/services" element={<Services />} />
 <Route path="/contact" element={<Contact />} />
   <Route path="/admin/contacts" element={<AdminContacts />} />
-
+ <Route path="/vehicules/:id" element={<VehicleDetail />} /> {/* ⬅️ nouvelle route */}
   </Routes>
   );
 }
